@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AyurDiet - Practice Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="dashboard-container">
+
+    <aside class="sidebar">
+      <div class="logo">
+        <div class="logo-icon">A</div>
+        <div>
+          <h1>AyurDiet</h1>
+          <p>Ayurvedic Diet Platform</p>
+        </div>
+      </div>
+
+      <nav>
+        <small class="nav-label">Main Features</small>
+        <ul>
+          <li><a href="#"><i class="fas fa-th-large"></i> Dashboard</a></li>
+          <li><a href="#"><i class="fas fa-plus"></i> Create Diet Plan</a></li>
+          <li><a href="#"><i class="fas fa-database"></i> Food Database</a></li>
+          <li><a href="#"><i class="fas fa-mortar-pestle"></i> Recipe Analyzer</a></li>
+          <li class="active"><a href="#"><i class="fas fa-chart-line"></i> Analytics</a></li>
+          <li><a href="#"><i class="fas fa-user-friends"></i> Patients</a></li>
+        </ul>
+
+        <small class="nav-label">System</small>
+        <ul>
+          <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p>Dr. Anand's Practice</p>
+        <small>Integrative Ayurvedic Medicine</small>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="top-bar">
+        <i class="fas fa-sun"></i>
+      </header>
+
+      <section class="analytics-section">
+        <div class="header-row">
+          <div class="title-block">
+            <h2>Practice Analytics</h2>
+            <p>Comprehensive insights into patient trends and practice efficacy.</p>
+          </div>
+          <div class="actions-block">
+            <div class="date-picker">
+              <i class="far fa-calendar-alt"></i>
+              <span>Jan 1, 2024 - Jan 31, 2024</span>
+            </div>
+            <button class="btn-export">
+              <i class="fas fa-download"></i> Export Data
+            </button>
+          </div>
+        </div>
+
+        <div class="stats-row grid-3">
+          <div class="stat-card">
+            <h3>Total Patients</h3>
+            <div class="stat-value">142</div>
+            <div class="stat-meta growth">
+              <i class="fas fa-arrow-up"></i> 12% vs. Dec 2023
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <h3>Dosha Profile</h3>
+            <div class="dosha-stat-block">
+              <div class="dosha-info">
+                <strong>Pitta-Vata (40%)</strong>
+              </div>
+              <div class="small-chart-container">
+                <canvas id="doshaSummaryChart"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <h3>Active Diet Plans</h3>
+            <div class="stat-value">85</div>
+            <div class="stat-meta growth">
+              <i class="fas fa-arrow-up"></i> 5%
+            </div>
+          </div>
+        </div>
+
+        <div class="charts-row grid-2">
+          <div class="chart-card">
+            <h3>Patient Dosha Distribution</h3>
+            <div class="pie-chart-container">
+              <canvas id="patientDoshaPie"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <h3>Prescribed Foods by Guna</h3>
+            <div class="bar-chart-container">
+              <canvas id="foodsBarChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="details-row grid-2">
+          <div class="chart-card">
+            <h3>Diet Plan Compliance Trend</h3>
+            <div class="line-chart-container">
+              <canvas id="complianceLineChart"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <h3>Practice Overview Details</h3>
+            <div class="detail-table-container">
+              <table class="simple-table">
+                <thead>
+                  <tr>
+                    <th>[Condition]</th>
+                    <th>Avg. Progress Score]</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>[Patients Treated]</strong></td>
+                    <td>92.6</td>
+                  </tr>
+                  <tr>
+                    <td>[Hypertension]</td>
+                    <td>88.7</td>
+                  </tr>
+                  <tr>
+                    <td>[Patients Treated]</td>
+                    <td>75.8</td>
+                  </tr>
+                  <tr>
+                    <td>[Digestive Issues]</td>
+                    <td>70.8</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

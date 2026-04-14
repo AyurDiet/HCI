@@ -1,0 +1,368 @@
+:root {
+  --bg-sidebar: #f1f6f1;
+  /* Shared light sage background */
+  --bg-main: #ffffff;
+  /* White content area */
+  --accent-green: #27ae60;
+  /* Theme green */
+  --active-bg: #e1ede1;
+  /* Sidebar highlight */
+  --card-border: #eeeeee;
+  --text-dark: #333333;
+  --text-light: #666666;
+
+  /* Chart Colors */
+  --chart-green-dark: #27ae60;
+  --chart-green-mid: #98c798;
+  --chart-green-light: #cde4cd;
+  --chart-beige: #e1c195;
+  --chart-red: #d99a9a;
+}
+
+/* --- Base Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+}
+
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+/*  Shared Sidebar  */
+.sidebar {
+  width: 280px;
+  background: var(--bg-sidebar);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e0e6e0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.logo-icon {
+  background: var(--accent-green);
+  color: white;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.logo h1 {
+  font-size: 1.1rem;
+  line-height: 1;
+  color: #1a1a1a;
+}
+
+.logo p {
+  font-size: 0.75rem;
+  color: var(--text-light);
+}
+
+.nav-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #999;
+  margin: 20px 0 10px 0;
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  margin-bottom: 4px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+nav ul li.active a {
+  background: var(--active-bg);
+  color: #1b5e20;
+  font-weight: 600;
+}
+
+nav ul li.active a i {
+  color: var(--accent-green);
+}
+
+nav ul li a:hover:not(.active) {
+  background: #e8eee8;
+  color: var(--text-dark);
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  text-align: center;
+  padding-top: 20px;
+  color: var(--text-light);
+  font-size: 0.8rem;
+}
+
+.sidebar-footer small {
+  color: #999;
+  font-size: 0.7rem;
+}
+
+/* --- Analytics Main Content --- */
+.content {
+  flex: 1;
+  background: var(--bg-main);
+  padding: 24px 40px 40px 40px;
+  overflow-y: auto;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+  color: #bbb;
+  cursor: pointer;
+}
+
+/* Utility Grid Classes */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 24px;
+}
+
+
+
+/* Header Area */
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.title-block h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.title-block p {
+  color: var(--text-light);
+  margin-top: 2px;
+  font-size: 0.95rem;
+}
+
+.actions-block {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.date-picker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #ddd;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  background: #fff;
+  cursor: pointer;
+}
+
+.date-picker i {
+  color: #999;
+}
+
+.btn-export {
+  background: #a5d6a7;
+  color: #2e7d32;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-export:hover {
+  background: #96cc98;
+}
+
+/* Stat & Chart Cards */
+.stat-card,
+.chart-card {
+  background: #fff;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.01);
+}
+
+.stat-card h3,
+.chart-card h3 {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: normal;
+  margin-bottom: 15px;
+}
+
+.chart-card h3 {
+  margin-bottom: 25px;
+}
+
+
+/* Stat Card Specifics */
+.stat-value {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.stat-meta {
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stat-meta.growth {
+  color: #555;
+}
+
+.stat-meta.growth i {
+  color: var(--accent-green);
+}
+
+/* Dosha Stat Row Specifics */
+.dosha-stat-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: -10px;
+}
+
+.dosha-info strong {
+  font-size: 1.1rem;
+  color: #111;
+  font-weight: 600;
+}
+
+.small-chart-container {
+  width: 70px;
+  height: 70px;
+  position: relative;
+}
+
+/*  Chart Containers */
+.pie-chart-container {
+  height: 260px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.bar-chart-container {
+  height: 260px;
+  position: relative;
+}
+
+.line-chart-container {
+  height: 260px;
+  position: relative;
+}
+
+/* Specific Container Sizes to match image layout */
+.charts-row .chart-card:first-child .pie-chart-container {
+  height: 320px;
+}
+
+.charts-row .chart-card:last-child .bar-chart-container {
+  height: 320px;
+}
+
+.charts-row,
+.details-row {
+  margin-top: 24px;
+}
+
+.details-row .chart-card:first-child .line-chart-container {
+  height: 320px;
+}
+
+/* Detail Table styling */
+.detail-table-container {
+  height: 320px;
+  overflow: hidden;
+}
+
+.simple-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: -10px;
+}
+
+.simple-table th {
+  text-align: left;
+  color: #999;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.simple-table td {
+  font-size: 0.9rem;
+  color: #555;
+  padding: 14px 10px;
+  border-bottom: 1px solid #f9f9f9;
+  vertical-align: middle;
+}
+
+.simple-table td strong {
+  color: #111;
+  font-weight: 600;
+}

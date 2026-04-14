@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AyurDiet - Patient Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">
+        <div class="logo-icon">A</div>
+        <div>
+          <h1>AyurDiet</h1>
+          <p>Ayurvedic Diet Platform</p>
+        </div>
+      </div>
+
+      <nav>
+        <small class="nav-label">Main Features</small>
+        <ul>
+          <li><a href="#"><i class="fas fa-th-large"></i> Dashboard</a></li>
+          <li><a href="#"><i class="fas fa-plus"></i> Create Diet Plan</a></li>
+          <li><a href="#"><i class="fas fa-database"></i> Food Database</a></li>
+          <li><a href="#"><i class="fas fa-mortar-pestle"></i> Recipe Analyzer</a></li>
+          <li><a href="#"><i class="fas fa-chart-line"></i> Analytics</a></li>
+          <li class="active"><a href="#"><i class="fas fa-user-friends"></i> Patients</a></li>
+        </ul>
+
+        <small class="nav-label">System</small>
+        <ul>
+          <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p>Dr. Anand's Practice</p>
+        <small>Integrative Ayurvedic Medicine</small>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="top-bar">
+        <i class="fas fa-sun"></i>
+      </header>
+
+      <section class="manager-section">
+        <div class="title-row">
+          <h2>Patients Manager</h2>
+          <p>Create and manage comprehensive patient profiles.</p>
+        </div>
+
+        <div class="action-bar">
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search patients by name, dosha, or condition...">
+          </div>
+          <button class="btn-add">+ Add New Patient</button>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Patient Name</th>
+                <th>Age/Ge...</th>
+                <th>Condition</th>
+                <th>Last Visit</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="patient-table-body">
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <button><i class="fas fa-angle-double-left"></i></button>
+          <button><i class="fas fa-angle-left"></i></button>
+          <button class="active">1</button>
+          <button><i class="fas fa-angle-right"></i></button>
+          <button><i class="fas fa-angle-double-right"></i></button>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
