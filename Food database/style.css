@@ -1,0 +1,188 @@
+:root {
+  --bg-main: #F9FAFB;
+  --card-bg: #FFFFFF;
+  --border: #E5E7EB;
+
+  --text-dark: #1F2937;
+  --text-medium: #4B5563;
+  --text-light: #9CA3AF;
+
+  --primary: #22C55E;
+  --primary-dark: #15803D;
+}
+
+/* Body */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-main);
+  display: flex;
+}
+
+/* Sidebar */
+aside {
+  width: 240px;
+  height: 100vh;
+  background: white;
+  border-right: 1px solid var(--border);
+  padding: 20px;
+  position: fixed;
+}
+
+aside h2 {
+  color: var(--primary);
+}
+
+aside ul {
+  list-style: none;
+  padding: 0;
+}
+
+aside li {
+  margin: 15px 0;
+  color: var(--text-medium);
+}
+
+aside .active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Main */
+main {
+  margin-left: 260px;
+  padding: 30px;
+  width: 100%;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header p {
+  color: var(--text-medium);
+}
+
+/* Buttons */
+button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-outline {
+  background: white;
+  border: 1px solid var(--border);
+}
+
+/* Filters */
+.filters {
+  margin-top: 20px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+input, select {
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+/* Grid */
+.grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Card */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category {
+  font-size: 12px;
+  color: var(--text-light);
+}
+
+/* Text */
+.nutrients {
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.sweet {
+  background: #FCE7F3;
+  color: #BE185D;
+}
+
+.cold {
+  background: #E0F2FE;
+  color: #0369A1;
+}
+
+.hot {
+  background: #FEF3C7;
+  color: #92400E;
+}
+
+.bitter {
+  background: #DCFCE7;
+  color: #166534;
+}
+
+/* Load More */
+.load-more {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Hover */
+.card:hover {
+  transform: translateY(-3px);
+  transition: 0.2s;
+}
+
+.no-results {
+  font-size: 16px;
+}
+
+.card {
+  transition: all 0.2s ease;
+}
